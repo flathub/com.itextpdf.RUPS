@@ -94,7 +94,13 @@
                     "type": "archive",
                     "url": "https://github.com/itext/i7j-rups/releases/download/7.1.13/iText7-RUPS-7.1.13-only-jars.zip",
                     "sha256": "5be98a86d7c30cade226665e610dca20058596c730f38cf6da449587bb1d547e",
-                    "dest": "rups"
+                    "dest": "rups",
+                    "x-checker-data": {
+    "type": "json",
+    "url": "https://api.github.com/repos/itext/i7j-rups/releases/latest",
+    "version-query": ".tag_name",
+    "url-query": ".assets[] | select(.name==\"itext-rups-\" + $version + \"-exe-archive.zip\") | .browser_download_url"
+}
                 },
                 {
                   "type": "file",
