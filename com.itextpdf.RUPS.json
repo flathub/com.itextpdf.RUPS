@@ -4,7 +4,9 @@
     "runtime-version": "21.08",
     "command": "rups",
     "sdk": "org.freedesktop.Sdk",
-    "sdk-extensions": ["org.freedesktop.Sdk.Extension.openjdk11"],
+    "sdk-extensions": [
+        "org.freedesktop.Sdk.Extension.openjdk11"
+    ],
     "finish-args": [
         "--env=PATH=/app/jre/bin:/app/bin:/usr/bin",
         "--env=JAVA_HOME=/app/jre",
@@ -27,51 +29,53 @@
                 "make install PREFIX=/app"
             ],
             "sources": [
-              {
-                "type": "git",
-                "url": "https://github.com/tamirzb/xgetres",
-                "tag": "1.0"
-              }
+                {
+                    "type": "git",
+                    "url": "https://github.com/tamirzb/xgetres",
+                    "tag": "1.0"
+                }
             ]
         },
         {
             "name": "imagemagick",
-            "cleanup": ["*"],
+            "cleanup": [
+                "*"
+            ],
             "config-opts": [
-              "--enable-static=no",
-              "--disable-docs",
-              "--disable-deprecated",
-              "--without-autotrace",
-              "--without-bzlib",
-              "--without-djvu",
-              "--without-dps",
-              "--without-fftw",
-              "--without-fontconfig",
-              "--without-fpx",
-              "--without-freetype",
-              "--without-gvc",
-              "--without-jbig",
-              "--without-jpeg",
-              "--without-lcms",
-              "--without-lzma",
-              "--without-magick-plus-plus",
-              "--without-openexr",
-              "--without-openjp2",
-              "--without-pango",
-              "--without-raqm",
-              "--without-tiff",
-              "--without-webp",
-              "--without-wmf",
-              "--without-x",
-              "--without-xml",
-              "--without-zlib"
+                "--enable-static=no",
+                "--disable-docs",
+                "--disable-deprecated",
+                "--without-autotrace",
+                "--without-bzlib",
+                "--without-djvu",
+                "--without-dps",
+                "--without-fftw",
+                "--without-fontconfig",
+                "--without-fpx",
+                "--without-freetype",
+                "--without-gvc",
+                "--without-jbig",
+                "--without-jpeg",
+                "--without-lcms",
+                "--without-lzma",
+                "--without-magick-plus-plus",
+                "--without-openexr",
+                "--without-openjp2",
+                "--without-pango",
+                "--without-raqm",
+                "--without-tiff",
+                "--without-webp",
+                "--without-wmf",
+                "--without-x",
+                "--without-xml",
+                "--without-zlib"
             ],
             "sources": [
-              {
-                "type": "archive",
-                "url": "https://imagemagick.org/archive/releases/ImageMagick-7.0.8-68.tar.xz",
-                "sha256": "3639baa6ceb5db38b1b48a4b917f90fe007ca7edca1f7894d5555a0bc746305a"
-              }
+                {
+                    "type": "archive",
+                    "url": "https://imagemagick.org/archive/releases/ImageMagick-7.0.8-68.tar.xz",
+                    "sha256": "3639baa6ceb5db38b1b48a4b917f90fe007ca7edca1f7894d5555a0bc746305a"
+                }
             ]
         },
         {
@@ -92,32 +96,32 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/itext/i7j-rups/releases/download/7.1.13/iText7-RUPS-7.1.13-only-jars.zip",
-                    "sha256": "5be98a86d7c30cade226665e610dca20058596c730f38cf6da449587bb1d547e",
+                    "url": "https://github.com/itext/i7j-rups/releases/download/7.2.3/iText7-RUPS-7.2.3-only-jars.zip",
+                    "sha256": "e02f1ac73f359a932e4bd8e08806d77467780904cecbf6621a56f1e8fd142b9d",
                     "dest": "rups",
                     "x-checker-data": {
-    "type": "json",
-    "url": "https://api.github.com/repos/itext/i7j-rups/releases/latest",
-    "version-query": ".tag_name",
-    "url-query": ".assets[] | select(.name==\"iText7-RUPS-\" + $version + \"-only-jars.zip\") | .browser_download_url"
-}
+                        "type": "json",
+                        "url": "https://api.github.com/repos/itext/i7j-rups/releases/latest",
+                        "version-query": ".tag_name",
+                        "url-query": ".assets[] | select(.name==\"iText7-RUPS-\" + $version + \"-only-jars.zip\") | .browser_download_url"
+                    }
                 },
                 {
-                  "type": "file",
-                  "path": "com.itextpdf.RUPS.metainfo.xml"
+                    "type": "file",
+                    "path": "com.itextpdf.RUPS.metainfo.xml"
                 },
                 {
-                  "type": "file",
-                  "path": "com.itextpdf.RUPS.desktop"
+                    "type": "file",
+                    "path": "com.itextpdf.RUPS.desktop"
                 },
                 {
-                  "type": "file",
-                  "path": "rups.sh"
+                    "type": "file",
+                    "path": "rups.sh"
                 },
                 {
-                  "type": "file",
-                  "url": "https://github.com/itext/i7j-rups/raw/7.1.13/src/main/resources/com/itextpdf/rups/logo.png",
-                  "sha256": "226be57182f49ed2667a606d04251b47d0427850f71dd469d92a864173d5745d"
+                    "type": "file",
+                    "url": "https://github.com/itext/i7j-rups/raw/7.1.13/src/main/resources/com/itextpdf/rups/logo.png",
+                    "sha256": "226be57182f49ed2667a606d04251b47d0427850f71dd469d92a864173d5745d"
                 }
             ]
         }
