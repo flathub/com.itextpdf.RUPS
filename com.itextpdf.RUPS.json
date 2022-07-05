@@ -99,7 +99,7 @@
     "type": "json",
     "url": "https://api.github.com/repos/itext/i7j-rups/releases/latest",
     "version-query": ".tag_name",
-    "url-query": ".assets[] | select(.name==\"itext-rups-\" + $version + \"-exe-archive.zip\") | .browser_download_url"
+    "url-query": ".assets[] | select(.name==\"iText7-RUPS-\" + $version + \"-only-jars.zip\") | .browser_download_url"
 }
                 },
                 {
