@@ -120,7 +120,7 @@
                 },
                 {
                     "type": "file",
-                    "url": "https://github.com/itext/i7j-rups/raw/7.1.13/src/main/resources/com/itextpdf/rups/logo.png",
+                    "url": "https://github.com/itext/i7j-rups/raw/master/src/main/resources/com/itextpdf/rups/logo.png",
                     "sha256": "226be57182f49ed2667a606d04251b47d0427850f71dd469d92a864173d5745d"
                 }
             ]
