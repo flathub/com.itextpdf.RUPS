@@ -96,8 +96,8 @@
             "sources": [
                 {
                     "type": "archive",
-                    "url": "https://github.com/itext/i7j-rups/releases/download/7.1.13/iText7-RUPS-7.1.13-only-jars.zip",
-                    "sha256": "5be98a86d7c30cade226665e610dca20058596c730f38cf6da449587bb1d547e",
+                    "url": "https://github.com/itext/i7j-rups/releases/download/7.2.3/iText7-RUPS-7.2.3-only-jars.zip",
+                    "sha256": "e02f1ac73f359a932e4bd8e08806d77467780904cecbf6621a56f1e8fd142b9d",
                     "dest": "rups",
                     "x-checker-data": {
                         "type": "json",
