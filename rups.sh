@@ -32,5 +32,6 @@ export GDK_SCALE
 
 # Java launch script based on:
 # https://intellij-support.jetbrains.com/hc/en-us/community/posts/360009469040/comments/360002026560
+# and https://stackoverflow.com/a/31492495 for passing bash $1 parameter
 
-${JAVA} ${VM_ARGS} -cp :${CLASSPATH} -Djava.library.path="${LD_LIBRARY_PATH}" ${MAINCLASS} $1 $2
+${JAVA} ${VM_ARGS} -cp :${CLASSPATH} -Djava.library.path="${LD_LIBRARY_PATH}" ${MAINCLASS} ${1:+"$1"}
