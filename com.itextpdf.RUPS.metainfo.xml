@@ -27,6 +27,17 @@
   <update_contact>nbenitezl_AT_gmail.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="7.2.5" type="stable" date="2023-01-09" timestamp="1673251189">
+      <description>
+        <ul>
+          <li>iText 7 Community was updated to 7.2.5.</li>
+          <li>JDK was updated to Java 17.</li>
+        </ul>
+      </description>
+      <url type="details">https://kb.itextpdf.com/home/it7kb/releases/release-rups-7-2-5</url>
+      <url type="details">https://github.com/itext/i7j-rups/releases/tag/7.2.5</url>
+      <url type="details">https://kb.itextpdf.com/home/it7kb/releases/release-itext-core-7-2-5</url>
+    </release>
     <release version="7.2.4" type="stable" date="2022-10-17" timestamp="1666009991">
       <description>
         <ul>
