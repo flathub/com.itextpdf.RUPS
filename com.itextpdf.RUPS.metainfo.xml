@@ -8,20 +8,19 @@
   <name>iText RUPS</name>
   <summary>iText RUPS is a tool to view PDF structure</summary>
   <description>
-    <p>RUPS is an abbreviation for Reading and Updating PDF Syntax. RUPS is a tool built on top of iText® that allows you to look inside a PDF document and browse the different PDF objects and content streams.
-    </p>
+    <p>RUPS is an abbreviation for Reading and Updating PDF Syntax. RUPS is a tool built on top of iText® that allows you to look inside a PDF document and browse the different PDF objects and content streams.</p>
   </description>
   <provides>
     <binary>rups</binary>
   </provides>
   <screenshots>
     <screenshot type="default">
-    <image type="source">https://gitlab.gnome.org/nbenitez/evince/uploads/7142d28e7d20d11528647acbac6a4af3/rups1.png</image>
-    <caption>First look</caption>
+      <image type="source">https://gitlab.gnome.org/nbenitez/evince/uploads/7142d28e7d20d11528647acbac6a4af3/rups1.png</image>
+      <caption>First look</caption>
     </screenshot>
     <screenshot>
-    <image type="source">https://gitlab.gnome.org/nbenitez/evince/uploads/4f250622ce80a53274c590ce44dcc875/rups2.png</image>
-    <caption>Second look</caption>
+      <image type="source">https://gitlab.gnome.org/nbenitez/evince/uploads/4f250622ce80a53274c590ce44dcc875/rups2.png</image>
+      <caption>Second look</caption>
     </screenshot>
   </screenshots>
   <url type="homepage">https://itextpdf.com/en/products/rups</url>
@@ -29,22 +28,22 @@
   <content_rating type="oars-1.1"/>
   <releases>
     <release version="7.2.3" date="2022-06-23">
-    <description>
-      <ul>
-        <li>The structure tree viewer now shows the text inside marked content items.</li>
-        <li>A new Preferences file where you can configure some visual settings, set default home folder, and allow duplicate files to be viewed.</li>
-        <li>Assorted fixes.</li>
-      </ul>
-    </description>
-    <url>https://github.com/itext/i7j-rups/releases/tag/7.2.3</url>
+      <description>
+        <ul>
+          <li>The structure tree viewer now shows the text inside marked content items.</li>
+          <li>A new Preferences file where you can configure some visual settings, set default home folder, and allow duplicate files to be viewed.</li>
+          <li>Assorted fixes.</li>
+        </ul>
+      </description>
+      <url>https://github.com/itext/i7j-rups/releases/tag/7.2.3</url>
     </release>
     <release version="7.1.13" date="2020-10-22">
-    <description>
-      <ul>
-        <li>Various updates.</li>
-      </ul>
-    </description>
-    <url>https://kb.itextpdf.com/home/it7kb/releases/release-itext-core-7-1-13</url>
+      <description>
+        <ul>
+          <li>Various updates.</li>
+        </ul>
+      </description>
+      <url>https://kb.itextpdf.com/home/it7kb/releases/release-rups-7-1-13</url>
     </release>
   </releases>
 </component>
