@@ -37,48 +37,6 @@
             ]
         },
         {
-            "name": "imagemagick",
-            "cleanup": [
-                "*"
-            ],
-            "config-opts": [
-                "--enable-static=no",
-                "--disable-docs",
-                "--disable-deprecated",
-                "--without-autotrace",
-                "--without-bzlib",
-                "--without-djvu",
-                "--without-dps",
-                "--without-fftw",
-                "--without-fontconfig",
-                "--without-fpx",
-                "--without-freetype",
-                "--without-gvc",
-                "--without-jbig",
-                "--without-jpeg",
-                "--without-lcms",
-                "--without-lzma",
-                "--without-magick-plus-plus",
-                "--without-openexr",
-                "--without-openjp2",
-                "--without-pango",
-                "--without-raqm",
-                "--without-tiff",
-                "--without-webp",
-                "--without-wmf",
-                "--without-x",
-                "--without-xml",
-                "--without-zlib"
-            ],
-            "sources": [
-                {
-                    "type": "archive",
-                    "url": "https://imagemagick.org/archive/releases/ImageMagick-7.0.8-68.tar.xz",
-                    "sha256": "3639baa6ceb5db38b1b48a4b917f90fe007ca7edca1f7894d5555a0bc746305a"
-                }
-            ]
-        },
-        {
             "name": "rups",
             "buildsystem": "simple",
             "build-commands": [
@@ -91,7 +49,7 @@
                 "for jar in /app/rups/itext-rups-*.jar; do bsdtar -C rups -xf \"$jar\" 'com/itextpdf/rups/logo.png'; done",
                 "desktop-file-install --dir=/app/share/applications com.itextpdf.RUPS.desktop",
                 "install -Dm644 com.itextpdf.RUPS.metainfo.xml /app/share/metainfo/com.itextpdf.RUPS.metainfo.xml",
-                "convert rups/com/itextpdf/rups/logo.png -resize 512x512 rups512x512.png",
+                "ffmpeg -i rups/com/itextpdf/rups/logo.png -filter:v 'scale=512:512:force_original_aspect_ratio=decrease,pad=512:512:-1:-1:color=0xFFFFFF00' -frames:v 1 -update 1 rups512x512.png",
                 "install -Dm644 rups512x512.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.itextpdf.RUPS.png"
             ],
             "sources": [
