@@ -88,9 +88,10 @@
                 "install -Dm755 rups.sh /app/bin/rups"
             ],
             "post-install": [
+                "for jar in /app/rups/itext-rups-*.jar; do bsdtar -C rups -xf \"$jar\" 'com/itextpdf/rups/logo.png'; done",
                 "desktop-file-install --dir=/app/share/applications com.itextpdf.RUPS.desktop",
                 "install -Dm644 com.itextpdf.RUPS.metainfo.xml /app/share/metainfo/com.itextpdf.RUPS.metainfo.xml",
-                "convert logo.png -resize 512x512 rups512x512.png",
+                "convert rups/com/itextpdf/rups/logo.png -resize 512x512 rups512x512.png",
                 "install -Dm644 rups512x512.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.itextpdf.RUPS.png"
             ],
             "sources": [
@@ -117,11 +118,6 @@
                 {
                     "type": "file",
                     "path": "rups.sh"
-                },
-                {
-                    "type": "file",
-                    "url": "https://github.com/itext/i7j-rups/raw/master/src/main/resources/com/itextpdf/rups/logo.png",
-                    "sha256": "226be57182f49ed2667a606d04251b47d0427850f71dd469d92a864173d5745d"
                 }
             ]
         }
