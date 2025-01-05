@@ -15,11 +15,11 @@
   </provides>
   <screenshots>
     <screenshot type="default">
-      <image type="source">https://gitlab.gnome.org/nbenitez/evince/uploads/7142d28e7d20d11528647acbac6a4af3/rups1.png</image>
+      <image type="source">https://gitlab.gnome.org/-/project/11279/uploads/7ebdb179bccb937b70b305ac7995da81/rups1.png</image>
       <caption>First look</caption>
     </screenshot>
     <screenshot>
-      <image type="source">https://gitlab.gnome.org/nbenitez/evince/uploads/4f250622ce80a53274c590ce44dcc875/rups2.png</image>
+      <image type="source">https://gitlab.gnome.org/-/project/11279/uploads/bb58d8c979fea120b9fa3f83f6ca6fca/rups2.png</image>
       <caption>Second look</caption>
     </screenshot>
   </screenshots>
