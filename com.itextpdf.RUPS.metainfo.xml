@@ -4,9 +4,11 @@
   <launchable type="desktop-id">com.itextpdf.RUPS.desktop</launchable>
   <metadata_license>CC0-1.0</metadata_license>
   <project_license>AGPL-3.0-only</project_license>
-  <developer_name>iText</developer_name>
+  <developer id="com.itextpdf">
+    <name>iText by Apryse</name>
+  </developer>
   <name>iText RUPS</name>
-  <summary>iText RUPS is a tool to view PDF structure</summary>
+  <summary>iText RUPS is a tool to view PDF structure in a Swing GUI</summary>
   <description>
     <p>RUPS is an abbreviation for Reading and Updating PDF Syntax. RUPS is a tool built on top of iText® that allows you to look inside a PDF document and browse the different PDF objects and content streams.</p>
   </description>
@@ -23,10 +25,29 @@
       <caption>Second look</caption>
     </screenshot>
   </screenshots>
-  <url type="homepage">https://itextpdf.com/en/products/rups</url>
+  <branding>
+    <color type="primary" scheme_preference="light">#ffbe6f</color>
+    <color type="primary" scheme_preference="dark">#3d3846</color>
+  </branding>
+  <url type="homepage">https://itextpdf.com/products/rups</url>
   <update_contact>nbenitezl_AT_gmail.com</update_contact>
   <content_rating type="oars-1.1"/>
   <releases>
+    <release version="26.01" type="stable" date="2026-01-12">
+      <description>
+        <ul>
+          <li>Brotli compression support.</li>
+          <li>Stream filter manipulation support.</li>
+          <li>ISO/TS 32004 MAC extension support.</li>
+          <li>Add "Exit" menu item (Ctrl/Cmd + Q).</li>
+          <li>Change hotkeys on macOS to use Cmd instead of Ctrl.</li>
+          <li>Improve initial error dialog size calculations and make it resizable.</li>
+          <li>Add human-readable descriptions for more OIDs.</li>
+          <li>Improve error message, when opening broken documents. Thanks @YoungJules!</li>
+        </ul>
+      </description>
+      <url type="details">https://github.com/itext/rups/releases/tag/26.01</url>
+    </release>
     <release version="7.2.5" type="stable" date="2023-01-09" timestamp="1673251189">
       <description>
         <ul>
