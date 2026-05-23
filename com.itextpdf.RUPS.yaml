@@ -1,0 +1,69 @@
+id: com.itextpdf.RUPS
+runtime: org.freedesktop.Platform
+runtime-version: "25.08"
+command: rups
+sdk: org.freedesktop.Sdk
+sdk-extensions:
+  - org.freedesktop.Sdk.Extension.openjdk17
+finish-args:
+  - --env=PATH=/app/jre/bin:/app/bin:/usr/bin
+  - --env=JAVA_HOME=/app/jre
+  - --env=JAVA=/app/jre/bin/java
+  - --env=JAVA_TOOL_OPTIONS=-Djava.io.tmpdir=/var/tmp
+  - --env=TMPDIR=/var/tmp
+  - --filesystem=/var/tmp
+  - --share=ipc
+  - --socket=x11
+  - --socket=pulseaudio
+  - --filesystem=~/Projects
+  - --filesystem=/run/media
+  - --filesystem=/media
+  - --filesystem=xdg-desktop
+  - --filesystem=xdg-documents
+  - --filesystem=xdg-download
+  - --filesystem=xdg-pictures
+  - --filesystem=xdg-public-share
+  - --persist=.java
+modules:
+  - name: xgetres
+    buildsystem: simple
+    build-commands:
+      - make
+      - make install PREFIX=/app
+    sources:
+      - type: git
+        url: https://github.com/tamirzb/xgetres
+        tag: "1.0"
+        commit: 7dd6aa2e3a469382ba09152710a5bb4abb3fbc9c
+  - name: rups
+    buildsystem: simple
+    build-commands:
+      - /usr/lib/sdk/openjdk17/install.sh
+      - install -d /app/rups/
+      - mv rups/* /app/rups/
+      - install -Dm755 rups.sh /app/bin/rups
+    post-install:
+      # Extract logo.png from the jar file
+      - for jar in /app/rups/itext-rups-*.jar; do bsdtar -C rups -xf "$jar" 'com/itextpdf/rups/logo.png'; done
+      - desktop-file-install --dir=/app/share/applications com.itextpdf.RUPS.desktop
+      - install -Dm644 com.itextpdf.RUPS.metainfo.xml /app/share/metainfo/com.itextpdf.RUPS.metainfo.xml
+      - ffmpeg -i rups/com/itextpdf/rups/logo.png -filter:v
+        'scale=512:512:force_original_aspect_ratio=decrease,pad=512:512:-1:-1:color=0xFFFFFF00'
+        -frames:v 1 -update 1 rups512x512.png
+      - install -Dm644 rups512x512.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.itextpdf.RUPS.png
+    sources:
+      - type: archive
+        url: https://github.com/itext/rups/releases/download/26.01/iText-RUPS-26.01-only-jars.zip
+        sha256: 2d9df10b5274a2195a41f54c84855c57eb4dcc0c2a2c88602bbef767f7c9007d
+        dest: rups
+        x-checker-data:
+          type: json
+          url: https://api.github.com/repos/itext/rups/releases/latest
+          version-query: .tag_name
+          url-query: .assets[] | select(.name=="iText-RUPS-" + $version + "-only-jars.zip") | .browser_download_url
+      - type: file
+        path: com.itextpdf.RUPS.metainfo.xml
+      - type: file
+        path: com.itextpdf.RUPS.desktop
+      - type: file
+        path: rups.sh
