@@ -1,5 +1,16 @@
 #!/bin/sh
 
+# Setup ~/Media soft link to media directory for connected drives eg. USB pendrives
+if [ ! -e Media ]; then
+   userMedia=$(ls -A /run/media 2>/dev/null)
+   userMediaLegacy=$(ls -A /media 2>/dev/null) # used by Debian/Ubuntu only
+   if [ -n "$userMedia" ]; then
+        ln -s /run/media/${userMedia} Media
+   elif [ -n "$userMediaLegacy" ]; then
+        ln -s /media/${userMediaLegacy} Media
+   fi
+fi
+
 # Java2D and Swing APIs use Xlib and support HiDPI via GDK_SCALE var
 # http://hg.openjdk.java.net/jdk9/jdk9/jdk/rev/bc2d1130105f#l27.8
 GDK_SCALE=1
